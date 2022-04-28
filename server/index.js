@@ -2,8 +2,9 @@ const express = require('express')
 const path = require('path')
 const Rollbar = require('rollbar')
 const app = express()
+app.use(express.json())
 
-let rollbar = new Rollbar({
+const rollbar = new Rollbar({
   accessToken: 'ca08aea249b94f0bbd58580542f50f15',
   captureUncaught: true,
   captureUnhandledRejections: true,
